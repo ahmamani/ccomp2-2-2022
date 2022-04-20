@@ -8,7 +8,7 @@ void imprimir(const int arr[], int tam) {
         cout << arr[a++] << " ";
 }
 
-void imprimirRr(const int arr[], int tam,int ini=0) {
+void imprimirRr(const int arr[], int tam, int ini=0) {
     if(tam==0){
         return;
     }
@@ -19,7 +19,7 @@ void imprimirRr(const int arr[], int tam,int ini=0) {
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8,9};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     int tam = sizeof(arr) / sizeof(arr[0]);
 
     imprimirRr(arr, tam);
