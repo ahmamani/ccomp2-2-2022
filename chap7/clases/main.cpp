@@ -1,35 +1,28 @@
-/**
- * Implementar una función para invertir los 
- * elementos de un arreglo
- * 
- * Ex. arr [1 2 3 4 5 6] despues de invocar a la 
- * función invertir arr [6 5 4 3 2 1]  
- */
-
 #include <iostream>
+#include "Account.h"
 
 using namespace std;
 
-void imprimir(const int arr[], int tam) {
+void imprimir(const Account arr[], int tam) {
     int a=0;
     while(tam--)
-        cout << arr[a++] << " ";
+        cout << arr[a++].getName() << " - ";
 }
 
-void intercambio(int &a, int &b) {
-    int tmp = a;
+void intercambio(Account &a, Account &b) {
+    Account tmp = a;
     a = b;
     b = tmp;
 }
 
-void invertir(int arr[], int tam) {
+void invertir(Account arr[], int tam) {
     int ini = 0;
-    while(ini <= tam) {
+    while(ini < tam) {
         intercambio(arr[ini++], arr[--tam]);
     }
 }
 
-void invertirRec(int arr[], int tam, int ini = 0) {
+void invertirRec(Account arr[], int tam, int ini = 0) {
     if(ini>=tam)
        return;
     intercambio(arr[ini++], arr[--tam]);
@@ -37,7 +30,12 @@ void invertirRec(int arr[], int tam, int ini = 0) {
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    Account aFab{"Fabian Espinoza", 50};
+    Account aManuel{"Manuel Charaja", 100};
+    Account aSelinne{"Sel", 1000};
+    Account aEsteban{"Esteban Medina", 10};
+
+    Account arr[] = {aFab, aManuel, aSelinne, aEsteban};
     int tam = sizeof(arr) / sizeof(arr[0]);
 
     imprimir(arr, tam);
