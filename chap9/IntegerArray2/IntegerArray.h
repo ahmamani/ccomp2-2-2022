@@ -30,7 +30,7 @@ class IntegerArray {
             }
         }
 
-        void push_bach(int elem) {
+        void push_back(int elem) {
             int *tmp = new int[size+1];
             tmp[size] = elem;
             for(int i = 0; i < size; i++) {

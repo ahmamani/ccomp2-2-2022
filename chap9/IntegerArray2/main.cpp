@@ -10,14 +10,22 @@ int main() {
 
     IntegerArray b(array, tam);
 
-    b.push_bach(100);
+    IntegerArray *ptr = &b;
+
+    ptr->push_back(1000);
+    ptr->print();
+
+    ptr->insert(0, 88);
+    ptr->print();
+
+    ptr->remove(4);
+    ptr->print();
+
+    IntegerArray &ref = b;
+    ref.insert(1, 123425);
     b.print();
 
-    b.insert(5,50);
-    b.print();
 
-    b.remove(2);
-    b.print();
 
     return 0;
 }
