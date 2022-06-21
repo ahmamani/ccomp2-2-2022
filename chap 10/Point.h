@@ -21,4 +21,5 @@ T Point<T>::getY() const {
     return y;
 }
 
+
 #endif
